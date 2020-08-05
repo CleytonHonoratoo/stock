@@ -1,0 +1,43 @@
+.TopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 44px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.label {
+    color: white;
+    font-size: 15pt;
+    margin-left: 370px;
+}
+
+.labelName {
+    color: white;
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.labelPage {
+    width: 80%;
+    height: 20px;
+    border-right: 1px solid white;
+
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10px;
+    width: 20%;
+    height: 44px;
+}
