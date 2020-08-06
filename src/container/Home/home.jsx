@@ -13,10 +13,10 @@ import {
 import Home from '../../components/Home/Home';
 
 class HomePage extends Component {
-    componentDidMount() {
-        const { fetchHome, form } = this.props
-        fetchHome(form)
-    }
+    // componentDidMount() {
+    //     const { fetchHome, form } = this.props
+    //     fetchHome(form)
+    // }
 
     render(){
         const { typeHome, data } = this.props;

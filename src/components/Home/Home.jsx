@@ -1,46 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Row, Input, Button, Table, Spin } from 'antd';
+import { Col, Row, Input, Button, Table, Spin, Tooltip } from 'antd';
 import './Home.css';
 import Header from '../Header/Header';
+import TicketStatusTimelineBox from '../TicketStatusTimelineBox/TicketStatusTimelineBox';
 import SideMenu from '../SideMenu/SideMenu';
 
 function Home(props) {
-  const { loading, typeHome, data } = props;
+  const { loading, typeHome } = props;
   
   const generateColumns = () => {
     const columns = [
       {
-        title: 'Produtos',
-        dataIndex: 'desc_prod',
+        title: 'Nome',
+        dataIndex: 'name',
+      },
+      {
+        title: 'Saida',
+        dataIndex: 'materialUsed',
         render: text => product(text),
       },
       {
-        title: 'Quantidade de pontos',
-        dataIndex: 'qnt_pontos',
+        title: 'Material Util.',
+        dataIndex: 'materialUsed',
+        render: text => product(text),
       },
       {
-        title: 'Data inicial',
-        dataIndex: 'data_init',
-        render: text => (
-          <span>
-            {text}
-          </span>
-        ),
-      },
-      {
-        title: 'Data final',
+        title: 'Devolução',
         dataIndex: 'data_fim',
-        render: text => (
-          <span>
-            {text}
-          </span>
-        ),
+        render: text => product(text),
       },
       {
-          title: 'Atividade',
-          dataIndex: 'cod_produto',
-          render: (item) => activity(item),
+        title: 'status',
+        dataIndex: 'cod_produto',
+        render: (item) => activity(item),
         },
     ];
 
@@ -48,14 +41,19 @@ function Home(props) {
   }
 
   const product = (text) => (
-    <div className='product'>
-      <div className='avat'>
-
+    <Tooltip
+      overlay={(
+        <TicketStatusTimelineBox
+          text={text}
+        />
+      )}
+    >
+      <div className="materialUsed">
+        <span>
+          4
+        </span>
       </div>
-      <span>
-        <span>{text}</span>
-      </span>
-    </div> 
+    </Tooltip>
   );
 
   const activity = (item) => (
@@ -65,33 +63,47 @@ function Home(props) {
   );
 
   const user = JSON.parse(localStorage.getItem('user'));
+  const data = [
+    { name: 'sidney', materialUsed: 'Roteador, Roteador, Roteador, Roteador, Roteador',  }
+  ]
 
     return (
-      
-      <Spin
-        spinning={loading}
-      >
+      <Spin spinning={loading}>
         <div>
-          <div className="klk">
           <Header  namePage='Home' user={user} />
-          </div>
             <div className='Home'>
-                <Row>
-                    <Col span={8} >
-                        <SideMenu
-                          typeHome={typeHome}
-                        />        
-                    </Col>
+              <Row>
+                <Col span={17}>
+                  <div className='content'>
+                      <Table
+                        dataSource={data} 
+                        columns={generateColumns()} 
+                      />
+                  </div>
+                </Col>
+              </Row>
 
-                    <Col span={16}>
-                        <div className='content'>
-                            <Table
-                                dataSource={data} 
-                                columns={generateColumns()} 
-                            />
-                        </div>
-                    </Col>
-                </Row>
+              <Row>
+                <Col span={17}>
+                  <div className='content'>
+                      <Table
+                        dataSource={data} 
+                        columns={generateColumns()} 
+                      />
+                  </div>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col span={17}>
+                  <div className='content'>
+                      <Table
+                        dataSource={data} 
+                        columns={generateColumns()} 
+                      />
+                  </div>
+                </Col>
+              </Row>
             </div>
         </div>
       </Spin>

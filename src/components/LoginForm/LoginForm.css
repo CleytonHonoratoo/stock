@@ -13,7 +13,7 @@
     height: 385px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    background-color: #444B70;
+    background-color: #f50f1c;
     box-shadow: 0 10px 10px rgba(0,0,0,.1);
     align-items: center;
     justify-content: center;
@@ -58,14 +58,14 @@
 }
 
 .title {
-    color: #444B70;
+    color: #ff3838;
     margin-left: 20px;
     margin-top: 40px;
     font-size: 20px;
 }
 
 .subTitle {
-    color: #444B70;
+    color: #ff3838;
     margin-left: 40px;
     font-size: 30px;
 }
@@ -89,7 +89,7 @@
 .submitButton {
     width: 70%;
     height: 40px;
-    background-color: #222848 !important;
+    background-color: #160808 !important;
     border: 0 !important;
     border-radius: 5px;
     margin-top: 15px;
