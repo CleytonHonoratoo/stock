@@ -15,9 +15,7 @@ function LoginForm(props) {
         <div className='LoginForm'>
             <Row>
                 <div className='containerLogo'>
-                    {/* <div className='texto'> */}
-                        <img src={logo} className='imagem'/>
-                    {/* </div> */}
+                    <img src={logo} className='imagem'/>
                 </div>
             </Row>
 
