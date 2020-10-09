@@ -1,10 +1,14 @@
 import * as actions from "./home.action";
 
 const defaultData = [
-  { name: 'sidney', materialUsed: 'Roteador,', exit: 1, used: 1, devolution: 0 },
-  { name: 'jefferson', materialUsed: 'cabo', exit: 1, used: 1, devolution: 0 },
-  { name: 'flavio', materialUsed: 'alguma', exit: 1, used: 1, devolution: 0 },
-  { name: 'lorran', materialUsed: 'alguma', exit: 1, used: 1, devolution: 0 },
+  {
+    id: 1,
+    name: 'Lorran',
+    materialUsed: '',
+    exit: 0,
+    used: 0,
+    devolution: 0,
+  },
 ];
 
 const initialState = () => ({
@@ -19,6 +23,11 @@ export default function (state = initialState(), action) {
         ...state,
         loading: action.payload,
       };
+    case actions.HOME_CHANGE_STOCK:
+      return {
+        ...state,
+        data: action.payload,
+      }
     default:
       return state;
   }

@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Col, Row, Input, Button, Table, Spin, Tooltip } from 'antd';
+import { Spin } from 'antd';
 import './Home.css';
 import Header from '../Header/Header';
-import Card from '../Card/Card';
 
 function Home(props) {
   const {
@@ -11,7 +9,7 @@ function Home(props) {
     openModal,
     data,
    } = props;
-console.log(data)
+
   const user = JSON.parse(localStorage.getItem('user'));
 
     return (
@@ -19,14 +17,9 @@ console.log(data)
         <div>
           <Header  namePage='Home' user={user} />
             <div className='Home'>
-              {data.map(item => (
-                <div className='content'>
-                  <Card
-                    dataSource={item}
-                    openModal={openModal}
-                  />
-                </div>
-              ))}
+              <div className='content'>
+                
+              </div>
             </div>
         </div>
       </Spin>

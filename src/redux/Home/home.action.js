@@ -3,6 +3,14 @@ import * as service from '../../service/login.service';
 export const LOADING = 'LOADING';
 export const HOME = 'HOME';
 export const TYPE_HOME = 'TYPE_HOME';
+export const HOME_CHANGE_STOCK = 'HOME_CHANGE_STOCK';
+
+export function changeStock(value) {
+  return {
+    type: HOME_CHANGE_STOCK,
+    payload: value,
+  }
+}
 
 export function loading(value) {
     return {
